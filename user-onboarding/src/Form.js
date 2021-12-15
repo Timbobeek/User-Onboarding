@@ -1,3 +1,7 @@
-export default function Form () {
-  console.log(1);
+import React from 'react';
+
+
+
+export default function Form (props) {
+  const{values} = props
 }
