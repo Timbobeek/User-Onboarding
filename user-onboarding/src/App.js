@@ -24,38 +24,31 @@ const initialUsers = [];
 
 
 function App() {
-  const [users, setUsers] = useState();
+  const [users, setUsers] = useState([]);
 
   const [formValues, setFormValues] = useState(initialFormValues);
 
   const formSubmit = () => {
-    
+    //alert('11111');
     const newUser = {
       name: 'vasya',
       email: 'vasya@yandex.ru',
       password: 'vasyag1999jsx',
       termsAgreement: true,
-    }
+    };
+  }
+
+  const inputChange = (name, value) => {
+    setFormValues({...formValues, [name]: value})
   }
   
-
-
-
-
-
-
-
-
-
-
-
-
-
   return (
     <StyledApp>
       <h1>Super User Friendly App</h1>
         <Form
+        submit={formSubmit}
         values={formValues}
+        change={inputChange}
         />
     </StyledApp>
     

@@ -5,13 +5,17 @@ import styled from 'styled-components';
 
 export default function Form (props) {
   
-  // return <p>some text inside Form component</p>;
 
-  const{values,submit} = props
+  const{values,submit, change} = props
 
   const onSubmit = evt => {
     evt.preventDefault()
     submit()
+  }
+
+  const onChange = evt => {
+    const {name} = evt.target
+    change(name)
   }
 
   return(
@@ -21,12 +25,14 @@ export default function Form (props) {
         <button>SUBMIT</button>
       </div>
 
-      <div classname = 'form inputs'>
+      <div className = 'form inputs'>
         <h3>User Info</h3>
         <label>
           <input
             value={values.name}
+            onChange={onChange}
             name='name'
+            type='text'
           />
         </label>
 
