@@ -26,6 +26,8 @@ const initialUsers = [];
 function App() {
   const [users, setUsers] = useState();
 
+  const [formValues, setFormValues] = useState(initialFormValues);
+
   const formSubmit = () => {
     
     const newUser = {
@@ -52,9 +54,9 @@ function App() {
   return (
     <StyledApp>
       <h1>Super User Friendly App</h1>
-      {/* <Form
-
-      /> */}
+        <Form
+        values={formValues}
+        />
     </StyledApp>
     
   );
