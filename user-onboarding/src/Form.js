@@ -1,12 +1,10 @@
 import React from 'react';
-import styled from 'styled-components';
 
 
 
 export default function Form (props) {
-  
 
-  const{values, submit, change} = props
+  const{values, submit, change, errors, disabled} = props
 
   const onSubmit = evt => {
     evt.preventDefault()
@@ -14,15 +12,20 @@ export default function Form (props) {
   }
 
   const onChange = evt => {
-    const {name, value} = evt.target
-    change(name, value)
+    const { name, value, checked, type } = evt.target
+    const valueToUse = type === 'checkbox' ? checked : value;
+    change(name, valueToUse)
   }
 
   return(
     <form className = 'form container' onSubmit={onSubmit}>
       <div className='form submit'>
         <h2>Add a user</h2>
-        <button>SUBMIT</button>
+        <button disabled={disabled}>SUBMIT</button>
+        <div className='errors'>
+          <div>{errors.first_name}</div>
+          <div>{errors.email}</div>
+        </div>
       </div>
 
       <div className = 'form inputs'>
