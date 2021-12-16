@@ -28,6 +28,16 @@
   color: #61dafb;
 }
 
+/* added some styling directly for fun */
+button {
+  color: black;
+  font-family:'Times New Roman', Times, serif;
+  font-weight: bolder;
+  padding: 1.5em;
+  background-color: orange;
+  border-radius: 40px;
+}
+
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
