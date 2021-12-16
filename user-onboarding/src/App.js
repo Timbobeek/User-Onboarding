@@ -62,7 +62,7 @@ function App() {
       first_name: formValues.first_name,
       email: formValues.email,
       password: formValues.password,
-      termsAgreement: true,
+      termsAgreement: formValues.termsAgreement
     };
     postNewUser(newUser);
   }
