@@ -29,9 +29,9 @@ export default function Form (props) {
         <h3>User Info</h3>
         <label> NAME----->
           <input
-            value={values.name}
+            value={values.first_name}
             onChange={onChange}
-            name='name'
+            name='first_name'
             type='text'
           />
         </label>
