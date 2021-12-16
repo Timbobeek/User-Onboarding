@@ -7,7 +7,10 @@ function User({details}) {
 
   return (
     <div className ='user container'>
-      <p>{details.first_name}</p>
+      <h2>{details.first_name}</h2>
+      <p>Email: {details.email}</p>
+      <p>Password: {details.password}</p>
+      <p>Do you agree to the terms of the agreement?: {details.termsAgreement}</p>
 
     </div>
   )

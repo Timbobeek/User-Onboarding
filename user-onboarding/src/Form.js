@@ -35,6 +35,35 @@ export default function Form (props) {
             type='text'
           />
         </label>
+        
+        <label> EMAIL----->
+          <input
+            value={values.email}
+            onChange={onChange}
+            name='email'
+            type='email'
+          />
+        </label>
+
+        <label> PASSWORD----->
+          <input
+            value={values.password}
+            onChange={onChange}
+            name='password'
+            type='text'
+          />
+        </label>
+
+        <label> TERMS OF SERVICE----->
+          <input
+            value={values.termsAgreement}
+            onChange={onChange}
+            name='termsAgreement'
+            type='checkbox'
+          />
+        </label>
+
+
 
       </div>
 
