@@ -33,6 +33,7 @@ function App() {
   const getUsers = () => {
     axios.get('https://reqres.in/api/users')
       .then(response => {
+        // console.log(response)
         //console.log(response.data.data)  (response.data) did NOT work in this case!!!!
         setUsers(response.data.data)
         // console.log(users)
@@ -46,8 +47,11 @@ function App() {
   const postNewUser = newUser => {
     axios.post('https://reqres.in/api/users', newUser)
     .then(response=>{
-      setUsers([response.data.data, ...users]);
-    })
+      // console.log(newUser)
+      // console.log(response)   ///make sure to check what you are dealing with (response.data.data did NOT work here)
+      setUsers([response.data, ...users]);
+    }).catch(error=>console.error(error))
+    .finally(()=> setFormValues(initialFormValues));
   }
 
   // console.log(users);
