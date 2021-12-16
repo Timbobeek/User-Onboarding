@@ -6,7 +6,7 @@ import styled from 'styled-components';
 export default function Form (props) {
   
 
-  const{values,submit, change} = props
+  const{values, submit, change} = props
 
   const onSubmit = evt => {
     evt.preventDefault()
@@ -14,8 +14,8 @@ export default function Form (props) {
   }
 
   const onChange = evt => {
-    const {name} = evt.target
-    change(name)
+    const {name, value} = evt.target
+    change(name, value)
   }
 
   return(
@@ -27,7 +27,7 @@ export default function Form (props) {
 
       <div className = 'form inputs'>
         <h3>User Info</h3>
-        <label>
+        <label> NAME----->
           <input
             value={values.name}
             onChange={onChange}

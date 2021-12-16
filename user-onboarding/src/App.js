@@ -31,9 +31,9 @@ function App() {
   const formSubmit = () => {
     //alert('11111');
     const newUser = {
-      name: 'vasya',
-      email: 'vasya@yandex.ru',
-      password: 'vasyag1999jsx',
+      name: formValues.name,
+      email: formValues.email,
+      password: formValues.password,
       termsAgreement: true,
     };
   }
