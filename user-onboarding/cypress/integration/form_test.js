@@ -1,7 +1,7 @@
 describe('User Onboarding App', ()=>{
   beforeEach(()=>{
     cy.visit('http://localhost:3000')
-  })
+  })  //big state refresher, super important!!!
 
   //helpers to get elements
 
