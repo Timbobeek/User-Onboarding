@@ -5,18 +5,36 @@ describe('User Onboarding App', ()=>{
 
   //helpers to get elements
 
-  const nameInput = () => cy.get('input[name=first_name]')
+  const nameInput = () => cy.get('input[name=first_name]');
+  const emailInput = () => cy.get('input[name=email]');
+  const passwordInput = () => cy.get('input[name=password]')
 
+
+  //just to check that i used proper elements from form.js
   it('proper elements are showing', ()=>{
     nameInput().should('exist');
+    emailInput().should('exist');
+    passwordInput().should('exist');
   })
 
+  
+
   describe('When user fills out the form', () => {
-    it('name can be typed', () => {
+    it('name, email, password can be typed', () => {
       nameInput()
         .should('have.value', '')
-        .type('test test test')
-        .should('have.value', 'test test test')
+        .type('name test test')
+        .should('have.value', 'name test test')
+
+      emailInput()
+        .should('have.value', '')
+        .type('email@yandex.ru')
+        .should('have.value', 'email@yandex.ru') //important what you type here, since it is a type 'email' and has its own rules
+
+      passwordInput()
+        .should('have.value', '')
+        .type('password test test')
+        .should('have.value', 'password test test')
     })
 
 
