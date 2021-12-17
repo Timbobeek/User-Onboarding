@@ -8,7 +8,7 @@ describe('User Onboarding App', ()=>{
   const nameInput = () => cy.get('input[name=first_name]');
   const emailInput = () => cy.get('input[name=email]');
   const passwordInput = () => cy.get('input[name=password]');
-  
+  const agreementInput = () => cy.get('input[name=termsAgreement]')
   const submitButton = () => cy.get('button'); 
 
 
@@ -17,7 +17,7 @@ describe('User Onboarding App', ()=>{
     nameInput().should('exist');
     emailInput().should('exist');
     passwordInput().should('exist');
-
+    agreementInput().check();
     submitButton().should('exist');
   })
 
@@ -39,6 +39,13 @@ describe('User Onboarding App', ()=>{
         .should('have.value', '')
         .type('password test test')
         .should('have.value', 'password test test')
+    })
+
+    it('terms of agreement box can be checked',()=>{
+      agreementInput()
+      .should('not.be.checked')
+      .check({force: true})
+      .should('be.checked')
     })
 
     it('submit button is disabled', ()=>{
