@@ -23,8 +23,8 @@ export default function Form (props) {
         <h2>Add a user</h2>
         <button disabled={disabled}>SUBMIT</button>
         <div className='errors'>
-          <div>{errors.first_name}</div>
-          <div>{errors.email}</div>
+          <div id="name-error">{errors.first_name}</div>
+          <div id="email-error">{errors.email}</div>
         </div>
       </div>
 

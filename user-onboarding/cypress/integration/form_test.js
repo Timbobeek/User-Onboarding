@@ -9,7 +9,8 @@ describe('User Onboarding App', ()=>{
   const emailInput = () => cy.get('input[name=email]');
   const passwordInput = () => cy.get('input[name=password]');
   const agreementInput = () => cy.get('input[name=termsAgreement]')
-  const submitButton = () => cy.get('button'); 
+  const submitButton = () => cy.get('button');
+  const nameValidationMessage = () => cy.get('div#name-error');
 
 
   //just to check that i used proper elements from form.js
@@ -21,9 +22,30 @@ describe('User Onboarding App', ()=>{
     submitButton().should('exist');
   })
 
-  
-
   describe('When user fills out the form', () => {
+    // it('and name is incomplete then validation message is shown', () => {
+    //   nameInput()
+    //     .should('have.value', '')
+    //     .type('a');
+
+    //   submitButton().should('be.disabled');
+
+    //   nameValidationMessage()
+    //     .contains('First name has to be five characters!')
+    // })
+
+    it('and name is set and removed then validation message is shown', () => {
+      nameInput()
+        .should('have.value', '')
+        .type('aaaaaa')
+        .clear();
+
+      submitButton().should('be.disabled');
+
+      nameValidationMessage()
+        .contains('First name is required!')
+    })
+
     it('name, email, password can be typed', () => {
       nameInput()
         .should('have.value', '')
