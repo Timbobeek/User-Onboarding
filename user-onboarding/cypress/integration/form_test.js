@@ -11,6 +11,17 @@ describe('User Onboarding App', ()=>{
     nameInput().should('exist');
   })
 
+  describe('When user fills out the form', () => {
+    it('name can be typed', () => {
+      nameInput()
+        .should('have.value', '')
+        .type('test test test')
+        .should('have.value', 'test test test')
+    })
+
+
+  })
+
 
 
 
